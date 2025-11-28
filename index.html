@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Природа Крыма - Уникальный полуостров</title>
+    <link rel="stylesheet" href="nature-style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Навигация -->
+    <nav class="primary-nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-brand">
+                🌿 Природа Крыма
+            </a>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link active">Главная</a></li>
+                <li><a href="zones.html" class="nav-link">Климатические зоны</a></li>
+                <li><a href="biodiversity.html" class="nav-link">Биоразнообразие</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Основной контент -->
+    <main class="main-wrapper">
+        <!-- Герой секция -->
+        <section class="parallax-hero">
+            <div class="hero-content">
+                <h1 class="hero-title">Природное богатство Крыма</h1>
+                <p class="hero-subtitle">Уникальный полуостров, где встречаются разные климатические миры</p>
+                <a href="zones.html" class="btn" style="background: var(--accent); color: white; padding: 1rem 2rem; border-radius: 25px; text-decoration: none; display: inline-block; margin-top: 1rem;">Исследовать зоны</a>
+            </div>
+        </section>
+
+        <!-- Введение -->
+        <section class="content-section">
+            <div class="section-header">
+                <h2 class="section-title">Уникальность Крымской природы</h2>
+                <p>Полуостров, где на небольшой территории сосредоточено невероятное разнообразие ландшафтов и экосистем</p>
+            </div>
+
+            <div class="feature-grid">
+                <div class="feature-card fade-in">
+                    <img src="gora.jpg" alt="Горы Крыма" class="card-image">
+                    <div class="card-content">
+                        <h3 class="card-title">Горные массивы</h3>
+                        <p>Крымские горы создают уникальный микроклимат и являются домом для многих эндемичных видов растений и животных.</p>
+                    </div>
+                </div>
+
+                <div class="feature-card fade-in">
+                    <img src="bereg.jpeg" alt="Морское побережье" class="card-image">
+                    <div class="card-content">
+                        <h3 class="card-title">Морские побережья</h3>
+                        <p>Более 1000 км coastline с разнообразными ландшафтами - от песчаных пляжей до скалистых бухт.</p>
+                    </div>
+                </div>
+
+                <div class="feature-card fade-in">
+                    <img src="step.webp" alt="Степные просторы" class="card-image">
+                    <div class="card-content">
+                        <h3 class="card-title">Степные просторы</h3>
+                        <p>Обширные степные районы с уникальной флорой и фауной, адаптированной к засушливому климату.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Климатические особенности -->
+        <section class="content-section" style="background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); border-radius: 30px; margin: 2rem;">
+            <div class="section-header">
+                <h2 class="section-title">Климатическое разнообразие</h2>
+                <p>Три основные климатические зоны на одном полуострове</p>
+            </div>
+
+            <div class="infographic">
+                <div class="info-item">
+                    <div class="info-number">3</div>
+                    <div class="info-label">Основные климатические зоны</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-number">2500+</div>
+                    <div class="info-label">Видов растений</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-number">500+</div>
+                    <div class="info-label">Видов животных</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-number">150</div>
+                    <div class="info-label">Эндемичных видов</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Подвал -->
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Природа Крыма</h3>
+                <p>Изучаем уникальное природное наследие полуострова и его климатическое разнообразие.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Навигация</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="zones.html">Климатические зоны</a></li>
+                    <li><a href="biodiversity.html">Биоразнообразие</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Контакты</h3>
+                <ul class="footer-links">
+                    <li><a href="#">О проекте</a></li>
+                    <li><a href="#">Источники</a></li>
+                    <li><a href="#">Сотрудничество</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Анимация появления элементов при скролле
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, observerOptions);
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const elements = document.querySelectorAll('.feature-card, .info-item');
+            elements.forEach(el => {
+                observer.observe(el);
+            });
+        });
+    </script>
+</body>
+</html>
